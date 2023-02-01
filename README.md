@@ -1,3 +1,4 @@
-## Циклы for
+## factorial for
 
-Вычислене факториала заданого числа
+Calculate the factorial og a given number
+
