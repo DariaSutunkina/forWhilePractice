@@ -1,20 +1,28 @@
 package edu.dashasutunkina;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class forWhilePractice {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
-        int result = factorial(number);
-        System.out.println(result);
+        BigInteger result = factorial(number);
+        System.out.println("Result of %s factorial(number)" + result);
     }
 
-    public static int factorial(int number) {
-        int result = 1;
-        for (int i = result; i <= number; i++) {
-            result *= i;
+    public static BigInteger factorial(int number) {
+        if (number <= 15) {
+            BigInteger result = BigInteger.valueOf(1);
+            for (BigInteger bi = result; bi.compareTo(BigInteger.valueOf(number)) <= 0; bi = bi.add(BigInteger.valueOf(1))) {
+                result = result.multiply(bi);
+            }
+            return result;
+        } else {
+            BigInteger res = BigInteger.valueOf(0);
+            return res;
         }
-        return result;
     }
+
 }
+
